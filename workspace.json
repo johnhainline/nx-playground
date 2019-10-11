@@ -14,10 +14,7 @@
               "libs/models/tsconfig.lib.json",
               "libs/models/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/models/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/models/**"]
           }
         },
         "test": {
@@ -59,9 +56,7 @@
               "apps/angular-app/src/favicon.ico",
               "apps/angular-app/src/assets"
             ],
-            "styles": [
-              "apps/angular-app/src/styles.scss"
-            ],
+            "styles": ["apps/angular-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -121,10 +116,7 @@
               "apps/angular-app/tsconfig.app.json",
               "apps/angular-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/angular-app/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/angular-app/**"]
           }
         },
         "test": {
@@ -158,13 +150,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/angular-app-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/angular-app-e2e/**"
-            ]
+            "tsConfig": ["apps/angular-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/angular-app-e2e/**"]
           }
         }
       }
@@ -175,6 +162,13 @@
       "sourceRoot": "libs/ui/src",
       "prefix": "nx-example",
       "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ui/tsconfig.lib.json",
+            "project": "libs/ui/ng-package.json"
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -182,10 +176,7 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui/**"]
           }
         },
         "test": {
@@ -221,9 +212,7 @@
               "apps/react-app/src/favicon.ico",
               "apps/react-app/src/assets"
             ],
-            "styles": [
-              "apps/react-app/src/styles.scss"
-            ],
+            "styles": ["apps/react-app/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -273,10 +262,7 @@
               "apps/react-app/tsconfig.app.json",
               "apps/react-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/react-app/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/react-app/**"]
           }
         },
         "test": {
@@ -311,13 +297,8 @@
           "options": {
             "linter": "eslint",
             "config": "apps/react-app-e2e/.eslintrc",
-            "tsConfig": [
-              "apps/react-app-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/react-app-e2e/**"
-            ]
+            "tsConfig": ["apps/react-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/react-app-e2e/**"]
           }
         }
       }
@@ -335,9 +316,7 @@
             "outputPath": "dist/apps/nest-server",
             "main": "apps/nest-server/src/main.ts",
             "tsConfig": "apps/nest-server/tsconfig.app.json",
-            "assets": [
-              "apps/nest-server/src/assets"
-            ]
+            "assets": ["apps/nest-server/src/assets"]
           },
           "configurations": {
             "production": {
@@ -368,10 +347,7 @@
               "apps/nest-server/tsconfig.app.json",
               "apps/nest-server/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/nest-server/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/nest-server/**"]
           }
         },
         "test": {
@@ -406,13 +382,8 @@
           "options": {
             "linter": "eslint",
             "config": "apps/global-e2e/.eslintrc",
-            "tsConfig": [
-              "apps/global-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/global-e2e/**"
-            ]
+            "tsConfig": ["apps/global-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/global-e2e/**"]
           }
         }
       }

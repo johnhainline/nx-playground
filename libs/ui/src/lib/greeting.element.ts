@@ -1,9 +1,8 @@
-export class GreetingElement extends HTMLElement {
-  public static observedAttributes = ['title'];
+import {Component, Input} from "@angular/core";
 
-  attributeChangedCallback() {
-    this.innerHTML = `<h1>Welcome to ${this.title}!</h1>`;
-  }
+@Component({
+  template: `<h1>Welcome to {{title}}!</h1>`
+})
+export class GreetingComponent {
+  @Input() title: string;
 }
-
-customElements.define('ui-greeting', GreetingElement);
