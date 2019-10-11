@@ -28,6 +28,9 @@
     },
     "nest-server": {
       "tags": []
+    },
+    "global-e2e": {
+      "tags": []
     }
   }
 }
