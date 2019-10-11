@@ -25,6 +25,9 @@
     },
     "react-app-e2e": {
       "tags": []
+    },
+    "nest-server": {
+      "tags": []
     }
   }
 }

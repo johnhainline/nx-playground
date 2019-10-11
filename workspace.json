@@ -14,7 +14,10 @@
               "libs/models/tsconfig.lib.json",
               "libs/models/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/models/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/models/**"
+            ]
           }
         },
         "test": {
@@ -56,7 +59,9 @@
               "apps/angular-app/src/favicon.ico",
               "apps/angular-app/src/assets"
             ],
-            "styles": ["apps/angular-app/src/styles.scss"],
+            "styles": [
+              "apps/angular-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -94,7 +99,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-app:build"
+            "browserTarget": "angular-app:build",
+            "port": 4201
           },
           "configurations": {
             "production": {
@@ -115,7 +121,10 @@
               "apps/angular-app/tsconfig.app.json",
               "apps/angular-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/angular-app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-app/**"
+            ]
           }
         },
         "test": {
@@ -149,8 +158,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/angular-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/angular-app-e2e/**"]
+            "tsConfig": [
+              "apps/angular-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/angular-app-e2e/**"
+            ]
           }
         }
       }
@@ -168,7 +182,10 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui/**"
+            ]
           }
         },
         "test": {
@@ -204,7 +221,9 @@
               "apps/react-app/src/favicon.ico",
               "apps/react-app/src/assets"
             ],
-            "styles": ["apps/react-app/src/styles.scss"],
+            "styles": [
+              "apps/react-app/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -236,7 +255,8 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "react-app:build"
+            "buildTarget": "react-app:build",
+            "port": 4202
           },
           "configurations": {
             "production": {
@@ -253,7 +273,10 @@
               "apps/react-app/tsconfig.app.json",
               "apps/react-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/react-app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/react-app/**"
+            ]
           }
         },
         "test": {
@@ -288,8 +311,74 @@
           "options": {
             "linter": "eslint",
             "config": "apps/react-app-e2e/.eslintrc",
-            "tsConfig": ["apps/react-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/react-app-e2e/**"]
+            "tsConfig": [
+              "apps/react-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/react-app-e2e/**"
+            ]
+          }
+        }
+      }
+    },
+    "nest-server": {
+      "root": "apps/nest-server",
+      "sourceRoot": "apps/nest-server/src",
+      "projectType": "application",
+      "prefix": "nest-server",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/nest-server",
+            "main": "apps/nest-server/src/main.ts",
+            "tsConfig": "apps/nest-server/tsconfig.app.json",
+            "assets": [
+              "apps/nest-server/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-server/src/environments/environment.ts",
+                  "with": "apps/nest-server/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-server:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/nest-server/.eslintrc",
+            "tsConfig": [
+              "apps/nest-server/tsconfig.app.json",
+              "apps/nest-server/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/nest-server/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nest-server/jest.config.js",
+            "tsConfig": "apps/nest-server/tsconfig.spec.json"
           }
         }
       }
