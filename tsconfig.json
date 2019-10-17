@@ -17,7 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@nx-example/models": ["libs/models/src/index.ts"],
-      "@nx-example/ui": ["libs/ui/src/index.ts"]
+      "@nx-example/ui": ["libs/ui/src/index.ts"],
+      "@smart-elements": ["node_modules/@smarthtmlelements/smart-elements/source/smart.elements.js"],
+      "@smart-elements-css": ["node_modules/@smarthtmlelements/smart-elements/source/styles/smart.default.css"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -56,7 +56,10 @@
               "apps/angular-app/src/favicon.ico",
               "apps/angular-app/src/assets"
             ],
-            "styles": ["apps/angular-app/src/styles.scss"],
+            "styles": [
+              "apps/angular-app/src/styles.scss",
+              "node_modules/@smarthtmlelements/smart-elements/source/styles/smart.default.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -212,7 +215,11 @@
               "apps/react-app/src/favicon.ico",
               "apps/react-app/src/assets"
             ],
-            "styles": ["apps/react-app/src/styles.scss"],
+            "styles": [
+              "apps/react-app/src/styles.scss",
+              "node_modules/@smarthtmlelements/smart-elements/source/styles/smart.default.css"
+            ],
+
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },

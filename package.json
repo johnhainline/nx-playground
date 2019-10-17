@@ -39,6 +39,7 @@
     "@nestjs/common": "^6.2.4",
     "@nestjs/core": "^6.2.4",
     "@nestjs/platform-express": "^6.2.4",
+    "@smarthtmlelements/smart-elements": "^4.6.0",
     "core-js": "^2.5.4",
     "document-register-element": "1.13.1",
     "react": "16.9.0",
