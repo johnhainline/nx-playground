@@ -10,3 +10,14 @@
   <smart-list-item value="United Kingdom">United Kingdom</smart-list-item>
   <smart-list-item value="United States">United States</smart-list-item>
 </smart-list-box>
+
+<div class="messages-container">
+  <div class="message" *ngFor="let message of (messages$ | async); trackBy: trackByFn">
+    {{ message.user }} : <span [style.color]="message.color">{{ message.message }}</span>
+  </div>
+</div>
+<div class="input-section">
+  <input [style.color]="color" type="text" [(ngModel)]="currentMessage" (keyup.enter)="sendMessage()" />
+  <input type="text" [(ngModel)]="user" />
+  <input type="color" [(ngModel)]="color" />
+</div>

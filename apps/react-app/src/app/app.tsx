@@ -3,6 +3,7 @@ import React from 'react';
 import '@smart-elements';
 import '@nx-example/ui';
 import './app.scss';
+import ChatComponent from "./chat.component";
 
 export const App = () => {
   const title = 'react-app';
@@ -20,6 +21,7 @@ export const App = () => {
         <smart-list-item value="United Kingdom">United Kingdom</smart-list-item>
         <smart-list-item value="United States">United States</smart-list-item>
       </smart-list-box>
+      <ChatComponent />
     </div>
   );
 };
