@@ -1,6 +1,6 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {CommonModule} from '@angular/common';
-import {Injector, NgModule} from "@angular/core";
+import {DoBootstrap, Injector, NgModule} from "@angular/core";
 import {createCustomElement} from '@angular/elements';
 import {GreetingComponent} from "./greeting.element";
 
@@ -13,9 +13,11 @@ import {GreetingComponent} from "./greeting.element";
   entryComponents: [GreetingComponent],
   bootstrap: []
 })
-export class UiModule {
-  constructor(private injector: Injector) {
-    const element = createCustomElement(GreetingComponent, { injector: this.injector });
-    customElements.define('ui-greeting', element);
+export class UiModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap(): void {
+    const el = createCustomElement(GreetingComponent, { injector: this.injector });
+    customElements.define('ui-greeting', el);
   }
 }

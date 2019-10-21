@@ -16,5 +16,8 @@
     "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
+  "files": [
+    "../src/lib/ui.module.ts"
+  ],
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"]
 }

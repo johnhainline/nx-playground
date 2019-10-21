@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '@smart-elements';
+import '@nx-example/ui';
 import './app.scss';
 
 export const App = () => {
