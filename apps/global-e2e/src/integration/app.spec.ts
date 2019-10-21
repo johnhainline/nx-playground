@@ -1,9 +1,8 @@
-import { getGreeting } from '../support/app.po';
 
-describe('', () => {
-  beforeEach(() => cy.visit('/'));
+describe("angular-app site", () => {
+  it("should visit page", () => {
+    cy.visit("/");
 
-  it('should display welcome message', () => {
-    getGreeting().contains('Welcome to !');
+    cy.get('h1').contains('Welcome!');
   });
 });

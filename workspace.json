@@ -375,12 +375,11 @@
           "builder": "@nrwl/cypress:cypress",
           "options": {
             "cypressConfig": "apps/global-e2e/cypress.json",
-            "tsConfig": "apps/global-e2e/tsconfig.e2e.json",
-            "devServerTarget": "undefined:serve"
+            "tsConfig": "apps/global-e2e/tsconfig.e2e.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "undefined:serve:production"
+              "devServerTarget": "angular-app:serve:production"
             }
           }
         },
