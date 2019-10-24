@@ -24,14 +24,6 @@
       "tags": ["scope:e2e"],
       "implicitDependencies": ["angular-app"]
     },
-    "react-app": {
-      "tags": ["scope:client"],
-      "implicitDependencies": ["models", "ui"]
-    },
-    "react-app-e2e": {
-      "tags": ["scope:e2e"],
-      "implicitDependencies": ["react-app"]
-    },
     "nest-server": {
       "tags": ["scope:server"],
       "implicitDependencies": ["models"]

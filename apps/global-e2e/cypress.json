@@ -1,9 +1,8 @@
 {
-  "baseUrl": "http://localhost:4201",
   "fileServerFolder": ".",
   "fixturesFolder": "./src/fixtures",
   "integrationFolder": "./src/integration",
-  "pluginsFile": "./src/plugins/index",
+  "pluginsFile": false,
   "supportFile": false,
   "video": true,
   "videosFolder": "../../dist/cypress/apps/global-e2e/videos",

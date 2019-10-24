@@ -12,8 +12,8 @@ import { Message } from '@nx-example/models';
 import { Server } from 'http';
 
 @WebSocketGateway(4001)
-export class AppGateway
-  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+export class AppGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+
   @WebSocketServer()
   wss: Server;
 

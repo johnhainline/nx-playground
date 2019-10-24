@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+
+  nest-server:
+    container_name: nest-server
+    build:
+      context: ..
+      dockerfile: nest-server/Dockerfile
+#    volumes:
+#      - '.:/app'
+#      - '/app/node_modules'
+    expose:
+      - '3333'
+      - '4001'
+
+  angular-app:
+    container_name: angular-app
+    build:
+      context: ..
+      dockerfile: angular-app/Dockerfile
+    depends_on:
+      - nest-server
+#    volumes:
+#      - '.:/app'
+#      - '/app/node_modules'
+    expose:
+      - '4201'
+
+  global-e2e:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+    image: "cypress/included:3.4.1"
+    depends_on:
+      - angular-app
+    environment:
+      - CYPRESS_baseUrl=http://angular-app:4201
+    # share the current folder as volume to avoid copying
+    working_dir: /apps/global-e2e/
+    volumes:
+      - ../apps/global-e2e:/apps/global-e2e
