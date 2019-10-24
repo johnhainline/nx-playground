@@ -13,6 +13,8 @@
   <smart-list-item value="United States">United States</smart-list-item>
 </smart-list-box>
 
+<div>nonsense</div>
+
 <div class="messages-container">
   <div class="message" *ngFor="let message of (messages$ | async); trackBy: trackByFn">
     {{ message.user }} : <span [style.color]="message.color">{{ message.message }}</span>
